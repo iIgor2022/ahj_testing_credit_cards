@@ -15,9 +15,6 @@
     "show:dist": "live-server dist",
     "e2e": "jest --testPathPattern=./e2e/ --runInBand"
   },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
   "author": "Ovchinnikov Igor",
   "license": "MIT",
   "devDependencies": {

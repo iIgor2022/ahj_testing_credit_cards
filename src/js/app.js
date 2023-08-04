@@ -1,4 +1,4 @@
-import GameGrid from "./gamegrid";
-import GamePlay from "./gameplay";
+import DOMManipulation from "./dommanipulation";
 
-
+const dom = new DOMManipulation(document.querySelector(".wrapper"));
+dom.bindToDOM();

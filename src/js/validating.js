@@ -1,4 +1,7 @@
 export function isValid(number) {
+    if (number === undefined) {
+      return false;
+    }
     let checksumm = 0;
     let bEven = false;
 

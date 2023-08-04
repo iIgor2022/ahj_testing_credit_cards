@@ -14,11 +14,13 @@ describe("Page start", () => {
         page = await browser.newPage();
     });
 
-    test("test", () => {
-        page.goto("http://localhost:8080");
+    test("test", async () => {
+        await page.goto("http://localhost:8080");
+
+        await page.waitForSelector("body");
     });
 
-    afterEach(async () => {
+    afterAll(async () => {
         await browser.close();
     })
 })

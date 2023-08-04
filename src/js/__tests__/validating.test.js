@@ -8,6 +8,7 @@ test.each([
   ["5555555555554444", true],
   ["4111111111111111", true],
   ["2202205022897836", true],
+  [undefined, false],
 ])("Card number %s is %s", (received, expected) => {
   expect(isValid(received)).toBe(expected);
 })
