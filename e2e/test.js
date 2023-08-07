@@ -6,10 +6,13 @@ describe('Page start', () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
+      executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
       headless: false,
-      slowMo: 100,
-      args: ['--no-sandbox'],
-      executablePath: process.env.PUPPETEER_EXEC_PATH,
+      args: [
+        `--disable-extensions-except=${extensionPath}`,
+        `--load-extension=${extensionPath}`,
+      ],
+      slowMo: 50,
     });
 
     page = await browser.newPage();
