@@ -1,4 +1,4 @@
-import DOMManipulation from "./dommanipulation";
+import DOMManipulation from './dommanipulation';
 
-const dom = new DOMManipulation(document.querySelector(".wrapper"));
+const dom = new DOMManipulation(document.querySelector('body'));
 dom.bindToDOM();
