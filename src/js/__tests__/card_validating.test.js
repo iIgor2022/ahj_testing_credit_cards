@@ -1,26 +1,19 @@
+/** @jest-environment jsdom */
 import DOMManipulation from '../dommanipulation';
 
-/**
- * @jest-environment jsdom
- */
-test('test', () => {
-  const element = document.createElement('div');
-  expect(element).not.toBeNull();
-})
+test.each([
+  ['371449635398431', '.ames', true],
+  ['4111111111111112', '.visa', false],
+])('Card number %s, class %s, expected %s', (value, received, expected) => {
+  document.body.innerHTML = '';
 
-// test.each([
-//   ['371449635398431', '.ames', true],
-//   ['4111111111111112', '.visa', false]
-// ])('Card number %s, class %s, expected %s', (value, received, expected) => {
-//   document.body.innerHTML = '';
+  const container = document.querySelector('body');
+  const validator = new DOMManipulation(container);
 
-//   const container = document.querySelector('body');
-//   const validator = new DOMManipulation(container);
+  validator.bindToDOM();
 
-//   validator.bindToDOM();
+  validator.input.value = value;
+  validator.submit.click();
 
-//   validator.input.value = value;
-//   validator.submit.click();
-
-//   expect(validator.element.querySelector(received).classList.contains('isvalid')).toEqual(expected);
-// });
+  expect(validator.element.querySelector(received).classList.contains('isvalid')).toEqual(expected);
+});
