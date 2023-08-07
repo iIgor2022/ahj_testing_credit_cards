@@ -11,4 +11,4 @@ test.each([
   [undefined, false],
 ])("Card number %s is %s", (received, expected) => {
   expect(isValid(received)).toBe(expected);
-})
+});

@@ -11,4 +11,4 @@ test.each([
   ["92202205022897836", "undefined"],
 ])("Card number %s is %s payment system", (recived, expected) => {
   expect(verifyPaymentSystem(recived)).toBe(expected);
-})
+});
