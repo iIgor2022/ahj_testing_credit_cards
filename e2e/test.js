@@ -8,10 +8,7 @@ describe('Page start', () => {
     browser = await puppeteer.launch({
       executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
       headless: false,
-      args: [
-        `--disable-extensions-except=${extensionPath}`,
-        `--load-extension=${extensionPath}`,
-      ],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
       slowMo: 50,
     });
 
