@@ -6,8 +6,7 @@ describe('Page start', () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
-      executablePath: process.env.PUPPETEER_EXEC_PATH, // set by docker container
-      headless: false,
+      headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
       slowMo: 50,
     });
