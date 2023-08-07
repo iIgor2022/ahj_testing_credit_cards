@@ -8,7 +8,7 @@ describe('Page start', () => {
     browser = await puppeteer.launch({
       headless: false,
       slowMo: 100,
-      devtools: true,
+      args: ['--no-sandbox', '--disabled-setupid-sandbox'],
     });
 
     page = await browser.newPage();
