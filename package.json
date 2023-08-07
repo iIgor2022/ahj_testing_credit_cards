@@ -40,5 +40,8 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
   },
-  "repository": "https://github.com/iIgor2022/ahj_testing_credit_cards.git"
+  "repository": "https://github.com/iIgor2022/ahj_testing_credit_cards.git",
+  "dependencies": {
+    "core-js": "^3.8.2"
+  }
 }
