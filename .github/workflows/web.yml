@@ -36,7 +36,9 @@ jobs:
         run: npm run lint
 
       - name: Run test
-        run: npm run start && npm run coverage
+        run: |
+          npm run start & 
+          npm run coverage
 
       - name: Build
         run: npm run build
